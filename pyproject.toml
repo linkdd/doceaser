@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "doceaser"
+version = "0.1.0"
+description = "Writing documentation made easier."
+authors = ["David Delassus <david.jose.delassus@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.1.7"
+waitress = "^3.0.0"
+python-frontmatter = "^1.1.0"
+marko = "^2.0.3"
+lxml = "^5.2.1"
+werkzeug = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+isort = "^5.13.2"
+
+[tool.isort]
+sections = ["FUTURE", "STDLIB", "PATH", "WSGI", "LXML", "MD", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER",]
+known_first_party = ["doceaser"]
+known_path = ["importlib", "pathlib", "mimetypes"]
+known_wsgi = ["http", "werkzeug", "wsgiref"]
+known_lxml = ["lxml"]
+known_md = ["frontmatter", "marko"]
+length_sort = true
+reverse_sort = true
+from_first = true
+remove_redundant_aliases = true
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
